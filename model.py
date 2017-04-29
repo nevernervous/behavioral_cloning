@@ -110,7 +110,7 @@ def get_data_generator(data_frame, batch_size=32):
         if i == batches_per_epoch - 1:
             # reset the index to loop the data_frame again.
             i = 0
-        yield y_train, y_train
+        yield x_train, y_train
 
 
 if __name__ == "__main__":
