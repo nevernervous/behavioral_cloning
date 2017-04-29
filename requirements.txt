@@ -1,0 +1,10 @@
+flask
+tensorflow==0.12.0
+keras==1.2.0
+pandas
+opencv-python
+pillow
+eventlet
+python-socketio
+h5py
+moviepy
