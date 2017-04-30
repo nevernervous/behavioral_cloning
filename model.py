@@ -70,7 +70,8 @@ def get_augmented_row(row):
     elif camera == 'right':
         steering -= 0.25
 
-    image = load_img(row[camera].strip())
+    # image = load_img(row[camera].strip())
+    image = load_img('data/' + row[camera].strip())
     image = img_to_array(image)
 
     # decide whether to horizontally flip the image:
@@ -118,7 +119,8 @@ if __name__ == "__main__":
     NB_EPOCH = 3  # The higher the better
 
     # Read the data from csv file
-    df = pd.read_csv('data/driving_log.csv', header=None, usecols=[0, 1, 2, 3], names=["center", "left", "right", "steering"])
+    # df = pd.read_csv('data/driving_log.csv', header=None, usecols=[0, 1, 2, 3], names=["center", "left", "right", "steering"])
+    df = pd.read_csv('data/driving_log.csv', usecols=[0, 1, 2, 3])
 
     # shuffle the data
     df = df.sample(frac=1).reset_index(drop=True)
